@@ -1,0 +1,25 @@
+<aura:component controller='SMSTwilioApexController' implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="MobileNumber" type="String" default="9624558568"/>
+    <aura:attribute name="CountryCode" type="String" default="+91" />
+    <aura:attribute name="MessageBody" type="String" default="Hello From Salesforce Cody"/>
+    <div class="slds-form-element">
+        <div class="slds-form-element__control">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col" style="width: 5vw;">
+                    <lightning:input value="{!v.MobileNumber }" label="Mobile Number" />
+                </div>
+                <div class="slds-col" style="width: 2vw;">
+                    <lightning:input value="{!v.CountryCode }" label="Country Code" />
+                </div>
+                <div class="slds-col" style="width: 14vw;">
+                    <lightning:textarea name="input1" required="true" value="" placeholder="compose your Message" label="Message Body" maxlength="140" messageWhenTooLong="A maximum of 160 characters are allowed in a Message." messageWhenValueMissing="An empty Message can not be Sent." />
+                </div>
+            </div>
+            <center>
+            <button class="slds-button slds-button_brand" onclick="{! c.SendingSMScontroller }">Send Message</button>
+            </center>
+        </div>
+        <label class="slds-form-element__label" for="form-element-help-01">For More Blogs visit @<a href="https://salesforcecody.com/">salesforcecody.com</a></label><br/>
+        <label class="slds-form-element__label" for="form-element-help-02">Portfolio @ <a href="http://umeshbeti.com/">Umeshbeti.com</a></label>
+    </div>
+</aura:component>
